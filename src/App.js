@@ -15,8 +15,40 @@ function App() {
   const [Upper,SetUpper] = useState("");
   const [Lower,SetLower] = useState("");
 
+  if(Lower===""|| Lower===" "){
+    SetLower("_");
+  }
+
+
+  if(Upper===""|| Upper===" "){
+    SetUpper("_");
+  }
+
+
+
+  const [Meme,SetMeme] = useState([]);
+
+
+
+
+
+  
+
 
   const pic = ()=>{
+    var b = []
+
+    fetch('https://raw.githubusercontent.com/ashura-code/sharkify/scrapings/shark.json')
+      .then(response => response.json())
+      .then(response => {
+        for(var i = 0; i < 550;i++){
+        console.log(response[0].results[0])
+        b.push(response[0].results[i])
+        }
+        SetMeme(b);
+      })
+  
+	.catch(err => console.error(err));
 
     const options = {
       method: 'GET',
@@ -25,18 +57,21 @@ function App() {
         'X-RapidAPI-Host': 'bing-image-search1.p.rapidapi.com'
       }
     };
+
+
+
     
     fetch('https://bing-image-search1.p.rapidapi.com/images/search?q=funny%20sharks&count=150', options)
       .then(response => response.json())
       .then(response =>{ 
       
-      console.log(response.value[0].thumbnailUrl);
+      // console.log(response.value[0].thumbnailUrl);
       var a=[];
       for(var  i=0;i<149;i++){
        a.push(response.value[i].contentUrl);
     }
     setPics(a);
-    console.log(a);
+    // console.log(a);
     
     
       })
@@ -81,7 +116,13 @@ function App() {
       <div>
         {
     Pics?.length > 0 ?(
+     
       <div className='content'>
+        {
+          Meme.map((n)=>(
+            <motion.img whileHover={{scale:1.1,transition: { duration: 0.1 }}}  whileTap={{ scale: 0.9 }} width="300" height="300" onClick={()=>handleClick(n)} alt="meme"src={n}></motion.img>
+          ))
+        }
       {
         Pics.map((n)=>(
          <motion.img whileHover={{scale:1.1,transition: { duration: 0.1 }}}  whileTap={{ scale: 0.9 }} width="300" height="300"  onClick={()=>handleClick(n)} alt="shark pic" src={n}></motion.img>
