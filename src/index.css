@@ -1,13 +1,91 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:'Bungee Spice', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='40' height='40' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(200)'%3E%3Crect width='100%25' height='100%25' fill='rgba(49, 130, 206,1)'/%3E%3Cpath d='M0 29.5a 9.5-9.5 0 0 0 9.5-9.5a 10.5-10.5 0 0 1 10.5-10.5v1a-9.5 9.5 0 0 0-9.5 9.5a-10.5 10.5 0 0 1-10.5 10.5zM0 69.5a 9.5-9.5 0 0 0 9.5-9.5a 10.5-10.5 0 0 1 10.5-10.5v1a-9.5 9.5 0 0 0-9.5 9.5a-10.5 10.5 0 0 1-10.5 10.5z' fill='%231a202c'/%3E%3Cpath d='M20 29.5a 9.5-9.5 0 0 0 9.5-9.5a 10.5-10.5 0 0 1 10.5-10.5v1a-9.5 9.5 0 0 0-9.5 9.5a-10.5 10.5 0 0 1-10.5 10.5z' fill='rgba(127, 156, 245,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+  background-size:contain;
+  animation:sea_anim 75s linear infinite; 
+  color:white;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@keyframes sea_anim {
+  0%{background-position:0 0 ;}
+  100%{background-position:-2122px 0 ;}
+}
+ 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.headers{
+  font-family: 'Bungee Spice','Courier New';
+  font-weight: bold;
+
+}
+
+.field{
+  position:fixed;
+  display:flex;
+  margin-bottom:5em;
+  flex-flow:column wrap;
+  width:20em;
+  height:8em;
+  margin-left:39%;
+  margin-right:40%;
+  margin-top:2em;
+  Gap:1em;
+  backdrop-filter: blur(3px);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='40' height='40' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(200)'%3E%3Crect width='100%25' height='100%25' fill='rgba(49, 130, 206,1)'/%3E%3Cpath d='M0 29.5a 9.5-9.5 0 0 0 9.5-9.5a 10.5-10.5 0 0 1 10.5-10.5v1a-9.5 9.5 0 0 0-9.5 9.5a-10.5 10.5 0 0 1-10.5 10.5zM0 69.5a 9.5-9.5 0 0 0 9.5-9.5a 10.5-10.5 0 0 1 10.5-10.5v1a-9.5 9.5 0 0 0-9.5 9.5a-10.5 10.5 0 0 1-10.5 10.5z' fill='%231a202c'/%3E%3Cpath d='M20 29.5a 9.5-9.5 0 0 0 9.5-9.5a 10.5-10.5 0 0 1 10.5-10.5v1a-9.5 9.5 0 0 0-9.5 9.5a-10.5 10.5 0 0 1-10.5 10.5z' fill='rgba(195, 218, 254,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+  border-radius: 20px;
+  z-index: 999;
+}
+
+input{
+  font-family: 'Bungee Spice','Courier New';
+  border-radius:6px;
+  border: 0px;
+  height:2em;
+  
+}
+
+button.submit.button{
+  height:2em;
+  border: 0px;
+  border-radius: 3px;
+  font-family: 'Bungee Spice';
+  
+}
+
+button.submit.button:hover{
+  background-color:rgba(42, 83, 220, 0.847);
+  
+}
+
+.field{
+  padding-top:3em;
+}
+
+.content{ /*the whole thing*/
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+img{
+
+  
+  margin:10px;
+}
+
+img:hover{
+  border-radius: 10px;
 }
